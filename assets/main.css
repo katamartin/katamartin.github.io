@@ -7,13 +7,12 @@ body {
   margin: 0;
   padding: 0;
   color: #0e0e0e;
-  font-size: 17px;
-  font-family: 'Noto Sans', sans-serif;
+  font-size: 16px;
+  font-family: 'Noto Serif', serif;
   font-weight: 300;
 }
 
 h1 {
-  font-family: 'Noto Serif', serif;
   font-size: 2.5rem;
 }
 
@@ -54,22 +53,42 @@ a {
   z-index: -1;
 }
 
+.card-container {
+  width: 90%;
+  max-width: 650px;
+}
+
+.stretchy-container {
+  width: 100%;
+  height: 100%;
+  padding-bottom: 57.14%; /* 3.5 : 2 */
+  position: relative;
+}
+
 .flip-container {
+  position: absolute;
+  top: 0; bottom: 0; left: 0; right: 0;
   perspective: 1000px;
   transform-style: preserve-3d;
 }
 
-.flip-container, .front, .back {
-  height: 286px;
-  max-height: 286px;
-  max-width: 500px;
-  width: 500px;
-}
-
 .front, .back {
   background: #fff0e1;
-  padding: 1rem;
+  height: 100%;
+  padding: 1.5rem;
+  width: 100%;
 }
+
+@media screen and (max-width: 480px) {
+  .stretchy-container {
+    padding-bottom: 71.43%; /* 3.5 : 2.5 */
+  }
+
+  .front, .back {
+    padding: 1rem;
+  }
+}
+
 
 .front {
   text-align: left;
@@ -120,6 +139,8 @@ a {
 
 /* flip speed goes here */
 .flipper {
+  height: 100%;
+  width: 100%;
   transition: 0.7s;
   transform-style: preserve-3d;
   position: relative;

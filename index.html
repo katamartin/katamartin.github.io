@@ -7,36 +7,40 @@
         <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
         <link rel="stylesheet" href="assets/main.css" />
         <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico">
-        <link href="https://fonts.googleapis.com/css?family=Noto+Sans|Noto+Serif" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Noto+Serif" rel="stylesheet">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/solid.css" integrity="sha384-wnAC7ln+XN0UKdcPvJvtqIH3jOjs9pnKnq9qX68ImXvOGz2JuFoEiCjT8jyZQX2z" crossorigin="anonymous">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/brands.css" integrity="sha384-nT8r1Kzllf71iZl81CdFzObMsaLOhqBU1JD2+XoAALbdtWaXDOlWOZTR4v1ktjPE" crossorigin="anonymous">
         <link href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" rel="stylesheet" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
 	</head>
 	<body>
     <div class="display-container">
-      <div class="flip-container" onclick="this.classList.toggle('rotate');">
-      	<div class="flipper">
-      		<div class="front">
-            <div>
-              <h1>Kata Martin</h1>
-              <h2>Frontend Software Engineer</h2>
-            </div>
-            <ul class="contact">
-              <li>206-293-2102</li>
-              <li>katasm@gmail.com</li>
-              <li>San Francisco, CA, USA</li>
-            </ul>
-      		</div>
-      		<div class="back">
-            <ul class="icons">
-              <li><a href="https://www.github.com/katamartin" onclick="disableEventPropagation(event);"><i class="fab fa-github"></i></a></li>
-    					<li><a href="https://www.linkedin.com/in/katamartin" onclick="disableEventPropagation(event);"><i class="fab fa-linkedin"></i></a></li>
-    					<li><a href="https://www.instagram.com/katamartian" onclick="disableEventPropagation(event);"><i class="fab fa-instagram"></i></a></li>
-    					<li><a href="mailto:katasm@gmail.com" onclick="disableEventPropagation(event);"><i class="fas fa-envelope"></i></a></li>
-    				</ul>
-            <span class="website">katamartin.com</span>
-      		</div>
-      	</div>
+      <div class="card-container">
+        <div class="stretchy-container">
+          <div class="flip-container" onclick="this.classList.toggle('rotate');">
+          	<div class="flipper">
+          		<div class="front">
+                <div>
+                  <h1>Kata Martin</h1>
+                  <h2>Frontend Software Engineer</h2>
+                </div>
+                <ul class="contact">
+                  <li>206-293-2102</li>
+                  <li>katasm@gmail.com</li>
+                  <li>San Francisco, CA, USA</li>
+                </ul>
+          		</div>
+          		<div class="back">
+                <ul class="icons">
+                  <li><a href="https://www.github.com/katamartin" onclick="disableEventPropagation(event);"><i class="fab fa-github"></i></a></li>
+        					<li><a href="https://www.linkedin.com/in/katamartin" onclick="disableEventPropagation(event);"><i class="fab fa-linkedin"></i></a></li>
+        					<li><a href="https://www.instagram.com/katamartian" onclick="disableEventPropagation(event);"><i class="fab fa-instagram"></i></a></li>
+        					<li><a href="mailto:katasm@gmail.com" onclick="disableEventPropagation(event);"><i class="fas fa-envelope"></i></a></li>
+        				</ul>
+                <span class="website">katamartin.com</span>
+          		</div>
+          	</div>
+          </div>
+        </div>
       </div>
       <span class="moley">:-.)</span>
     </div>
