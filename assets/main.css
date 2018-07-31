@@ -1,3 +1,7 @@
+/*
+  Flipping styles largely borrowed from https://davidwalsh.name/css-flip
+*/
+
 * {
   box-sizing: border-box;
   -moz-box-sizing: border-box;
