@@ -10,21 +10,21 @@ body {
   font-size: 17px;
   font-family: 'Noto Sans', sans-serif;
   font-weight: 300;
-  text-align: center;
 }
 
 h1 {
   font-family: 'Noto Serif', serif;
-  font-size: 40px;
-  font-weight: 300;
+  font-size: 2.5rem;
 }
 
-h2 {
+h1, h2 {
+  margin: 0;
   font-weight: 300;
 }
 
 ul {
   list-style: none;
+  margin: 0;
   padding: 0;
 }
 
@@ -68,6 +68,29 @@ a {
 
 .front, .back {
   background: #fff0e1;
+  padding: 1rem;
+}
+
+.front {
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.back {
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+  text-align: center;
+}
+
+.back li {
+  display: inline-block;
+}
+
+.website {
+  font-size: 0.5rem;
 }
 
 /* flip the pane when triggered */
