@@ -95,6 +95,8 @@ a {
   display: flex;
   justify-content: space-between;
   flex-direction: column;
+  z-index: 2;
+  transform: rotateY(0deg);
 }
 
 .back {
@@ -102,6 +104,7 @@ a {
   justify-content: flex-end;
   flex-direction: column;
   text-align: center;
+  transform: rotateY(-180deg);
 }
 
 .back li {
@@ -149,6 +152,8 @@ a {
 /* hide back of pane during swap */
 .front, .back {
   backface-visibility: hidden;
+  transition: 0.6s;
+	transform-style: preserve-3d;
 
   position: absolute;
   top: 0;
