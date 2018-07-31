@@ -1,0 +1,117 @@
+* {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  color: #0e0e0e;
+  font-size: 17px;
+  font-family: 'Noto Sans', sans-serif;
+  font-weight: 300;
+  text-align: center;
+}
+
+h1 {
+  font-family: 'Noto Serif', serif;
+  font-size: 40px;
+  font-weight: 300;
+}
+
+h2 {
+  font-weight: 300;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+a {
+  color: inherit;
+}
+
+.display-container {
+  align-items: center;
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  justify-content: center;
+  position: absolute;
+}
+
+.display-container::after {
+  content: "";
+  background: url('texture.jpg');
+  background-size: cover;
+  opacity: 0.5;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+}
+
+.flip-container {
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}
+
+.flip-container, .front, .back {
+  height: 286px;
+  max-height: 286px;
+  max-width: 500px;
+  width: 500px;
+}
+
+.front, .back {
+  background: #fff0e1;
+}
+
+/* flip the pane when triggered */
+.flip-container.rotate .flipper {
+  transform: rotateY(180deg);
+}
+
+/* update shadow and cursor when visible */
+.flip-container:not(.rotate) .flipper .front,
+.flip-container.rotate .flipper .back {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  cursor: pointer;
+}
+
+/* update shadow and cursor when hovered */
+.flip-container:not(.rotate) .flipper .front:hover,
+.flip-container.rotate .flipper .back:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+/* flip speed goes here */
+.flipper {
+  transition: 0.7s;
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+/* hide back of pane during swap */
+.front, .back {
+  backface-visibility: hidden;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* front pane, placed above back */
+.front {
+  z-index: 2;
+  /* for firefox 31 */
+  transform: rotateY(0deg);
+}
+
+/* back, initially hidden pane */
+.back {
+  transform: rotateY(180deg);
+}

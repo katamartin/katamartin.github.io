@@ -1,133 +1,50 @@
-<!DOCTYPE HTML>
-<!--
-	Strata by HTML5 UP
-	html5up.net | @n33co
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
+<!doctype html>
+<html lang='en'>
 	<head>
-		<title>Kata Martin</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
-		<link rel="shortcut icon" type="image/x-icon" href="./favicon.ico">
-		<meta name="theme-color" content="#ffffff">
+	    <title>Kata Martin</title>
+        <meta name='viewport' content='width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no'>
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+        <link rel="stylesheet" href="assets/main.css" />
+        <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico">
+        <link href="https://fonts.googleapis.com/css?family=Noto+Sans|Noto+Serif" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/solid.css" integrity="sha384-wnAC7ln+XN0UKdcPvJvtqIH3jOjs9pnKnq9qX68ImXvOGz2JuFoEiCjT8jyZQX2z" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/brands.css" integrity="sha384-nT8r1Kzllf71iZl81CdFzObMsaLOhqBU1JD2+XoAALbdtWaXDOlWOZTR4v1ktjPE" crossorigin="anonymous">
+        <link href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" rel="stylesheet" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
 	</head>
+	<body>
+    <div class="display-container">
+      <div class="flip-container" onclick="this.classList.toggle('rotate');">
+      	<div class="flipper">
+      		<div class="front">
+            <h1>Kata Martin</h1>
+            <h2>Frontend Software Engineer</h2>
+      		</div>
+      		<div class="back">
+            <ul class="icons">
+              <li><a href="https://www.github.com/katamartin" onclick="disableEventPropagation(event);"><i class="fab fa-github"></i></a></li>
+    					<li><a href="https://www.linkedin.com/in/katamartin" onclick="disableEventPropagation(event);"><i class="fab fa-linkedin"></i></a></li>
+    					<li><a href="mailto:katasm@gmail.com" onclick="disableEventPropagation(event);"><i class="fas fa-envelope"></i></a></li>
+    				</ul>
 
-	<body id="top">
+            <ul class="contact">
+              <li>1-206-293-2102</li>
+    					<li>katasm@gmail.com</li>
+    					<li>San Francisco, CA, USA</li>
+    				</ul>
+      		</div>
+      	</div>
+      </div>
+    </div>
 
-		<!-- Header -->
-			<header id="header">
-				<a href="#" class="image avatar"><img src="./images/pedal.jpg" alt="" /></a>
-				<h1>My name is <strong>Kata Martin</strong>.<br />
-				I'm a software engineer in San Francisco.<br />
-				</h1>
-			</header>
-
-		<!-- Main -->
-			<div id="main">
-
-				<!-- One -->
-					<section id="one">
-						<header class="major">
-							<h2>About Me</h2>
-						</header>
-						<p>
-						 	I first got excited about computer science in the math department at my liberal arts college. With comfortable footing in computer science fundamentals, I decided to study at App Academy to gain a technical and practical focus in web development. I am loving building with Ruby on Rails, JavaScript, Backbone.js, HTML, and CSS.
-							<br><br>
-							I was born and raised in Seattle, WA, recently graduated from Reed College in Portland, OR, and now am a software engineer in San Francisco, CA. I enjoyed my move down the West Coast and am eager to take on new and exciting technical challenges as an engineer in the Bay Area.
-						</p>
-						<ul class="actions">
-							<li><a href="kata_martin.pdf" class="button icon fa-file-text-o">View Resume</a></li>
-						</ul>
-					</section>
-
-				<!-- Two -->
-					<section id="two">
-						<h2>Recent Work</h2>
-						<div class="row">
-							<article class="6u 12u$(xsmall) work-item live">
-								<a href="http://chefgeni.us" class="image fit thumb"><img src="images/thumbs/landing-thumb.jpg" alt="" /></a>
-								<h3>Chef Genius</h3>
-								<p>A full stack web app built using Backbone and Ruby on Rails. Allows users to create, share, and annotate
-								recipes.<br></p>
-							</article>
-							<article class="6u 12u$(xsmall) work-item live">
-								<a href="https://katamartin.com/2048Clone/html/index.html" class="image fit thumb"><img src="images/thumbs/2048-thumb.png" alt="" /></a>
-								<h3>2048 Clone</h3>
-								<p>JavaScript game replicating the addicting 2048 game by Gabriele Cirulli.<br><br></p>
-							</article>
-						</div>
-						<div class="row">
-							<article class="6u 12u$(xsmall) work-item github">
-								<a href="https://github.com/katamartin/activerecordlite" class="image fit thumb"><img src="images/thumbs/ar-all.png" alt="" /></a>
-								<h3>Active Record Lite</h3>
-								<p>A pared down clone of the Rails ActiveRecord::Base class, which represents and accesses data in the database.<br><br></p>
-							</article>
-							<article class="6u$ 12u$(xsmall) work-item github">
-								<a href="https://github.com/katamartin/chess" class="image fit thumb"><img src="images/thumbs/chess-thumb.png" alt="" /></a>
-								<h3>Console Chess</h3>
-								<p>Console chess game with AI player built in Ruby.<br><br></p>
-							</article>
-						</div>
-						<div class="row">
-							<article class="6u$ 12u$(xsmall) work-item live">
-								<a href="https://katamartin.com/snake/html/index.html" class="image fit thumb"><img src="images/thumbs/play-thumb.png" alt="" /></a>
-								<h3>Snake Game</h3>
-								<p>JavaScript version of classic calculator/video game.<br><br>
-							</article>
-						</div>
-						<ul class="actions">
-							<li><a href="https://github.com/katamartin" class="button">See More on GitHub</a></li>
-						</ul>
-					</section>
-
-				<!-- Three -->
-					<section id="three">
-						<h2>Contact Information</h2>
-							<div class="4u$ 12u$(small)">
-								<ul class="labeled-icons">
-									<li>
-										<h3 class="icon fa-mobile"><span class="label">Phone</span></h3>
-										206-293-2102
-									</li>
-									<li>
-										<h3 class="icon fa-envelope-o"><span class="label">Email</span></h3>
-										<a href="mailto:katasm@gmail.com">katasm@gmail.com</a>
-									</li>
-									<li>
-										<h3 class="icon fa-map-marker"><span class="label">Location</span></h3>
-										San Francisco, CA<br />
-									</li>
-								</ul>
-							</div>
-						</div>
-					</section>
-			</div>
-
-		<!-- Footer -->
-			<footer id="footer">
-				<ul class="icons">
-					<li><a href="https://www.linkedin.com/in/katamartin" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
-					<li><a href="https://www.github.com/katamartin" class="icon fa-github"><span class="label">Github</span></a></li>
-					<li><a href="mailto:katasm@gmail.com" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
-					<li><a href="https://angel.co/kata-martin" class="icon fa-angellist"><span class="label">AngelList</span></a></li>
-					<li><a href="https://katamartin.tumblr.com" class="icon fa-tumblr"><span class="label">Tumblr</span></a></li>
-				</ul>
-				<ul class="copyright">
-					<li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
-				</ul>
-			</footer>
-
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.poptrox.min.js"></script>
-			<script src="assets/js/skel.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-			<script src="assets/js/main.js"></script>
-
-	</body>
+    <script>
+      function disableEventPropagation(e) {
+        if (e.stopPropagation){
+          e.stopPropagation();
+        } else if (window.event) {
+          window.event.cancelBubble=true;
+        }
+      }
+    </script>
+  </body>
 </html>
