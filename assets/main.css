@@ -93,6 +93,13 @@ a {
   font-size: 0.5rem;
 }
 
+.moley {
+  font-size: 0.75rem;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
 /* flip the pane when triggered */
 .flip-container.rotate .flipper {
   transform: rotateY(180deg);
