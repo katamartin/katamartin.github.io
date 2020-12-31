@@ -13,17 +13,8 @@
         <link href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" rel="stylesheet" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
   </head>
   <style>
-    .display-container-enhanced::after {
-      content: "";
-      background: url('assets/texture.jpg');
-      background-size: cover;
-      opacity: 0.5;
-      top: 0;
-      left: 0;
-      bottom: 0;
-      right: 0;
-      position: absolute;
-      z-index: -1;
+    .display-container.enhanced::after {
+      background-image: url('assets/texture.jpg');
     }
   </style>
 	<body>
@@ -72,7 +63,7 @@
       // https://css-tricks.com/the-blur-up-technique-for-loading-background-images/
 
       window.onload = function loadStuff() {
-        var win, doc, img, container, enhancedClass;
+        var win, doc, img, containerClass, container, enhancedClass;
 
         // Quit early if older browser (e.g. IE 8).
         if (!('addEventListener' in window)) {
@@ -82,8 +73,9 @@
         win = window;
         doc = win.document;
         img = new Image();
-        container = doc.querySelector('.display-container');
-        enhancedClass = 'display-container-enhanced';
+        containerClass = 'display-container';
+        container = doc.querySelector('.' + containerClass);
+        enhancedClass = 'enhanced';
 
         // Rather convoluted, but parses out the first mention of a background
         // image url for the enhanced display, even if the style is not applied.
@@ -98,10 +90,10 @@
               // ...checking if the rule is the one targeting the
               // enhanced display.
               if (styles[i].selectorText &&
-                  styles[i].selectorText == '.'+enhancedClass+'::after') {
-                // If so, set bgDecl to the entire background
+                  styles[i].selectorText == '.'+containerClass+'.'+enhancedClass+'::after') {
+                // If so, set bgDecl to the entire background-image
                 // value of that rule
-                bgStyle = styles[i].style.background;
+                bgStyle = styles[i].style.backgroundImage;
                 // ...and break the loop.
                 break;
               }
