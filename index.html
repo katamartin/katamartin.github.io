@@ -11,7 +11,21 @@
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/solid.css" integrity="sha384-wnAC7ln+XN0UKdcPvJvtqIH3jOjs9pnKnq9qX68ImXvOGz2JuFoEiCjT8jyZQX2z" crossorigin="anonymous">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/brands.css" integrity="sha384-nT8r1Kzllf71iZl81CdFzObMsaLOhqBU1JD2+XoAALbdtWaXDOlWOZTR4v1ktjPE" crossorigin="anonymous">
         <link href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" rel="stylesheet" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
-	</head>
+  </head>
+  <style>
+    .display-container-enhanced::after {
+      content: "";
+      background: url('assets/texture.jpg');
+      background-size: cover;
+      opacity: 0.5;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      position: absolute;
+      z-index: -1;
+    }
+  </style>
 	<body>
     <div class="display-container">
       <div class="card-container">
@@ -53,6 +67,64 @@
           window.event.cancelBubble=true;
         }
       }
+
+      // Code for "Blur Up" background largely grabbed from css-tricks:
+      // https://css-tricks.com/the-blur-up-technique-for-loading-background-images/
+
+      window.onload = function loadStuff() {
+        var win, doc, img, container, enhancedClass;
+
+        // Quit early if older browser (e.g. IE 8).
+        if (!('addEventListener' in window)) {
+          return;
+        }
+
+        win = window;
+        doc = win.document;
+        img = new Image();
+        container = doc.querySelector('.display-container');
+        enhancedClass = 'display-container-enhanced';
+
+        // Rather convoluted, but parses out the first mention of a background
+        // image url for the enhanced display, even if the style is not applied.
+        var bigSrc = (function () {
+          // Find all of the CssRule objects inside the inline stylesheet
+          var styles = doc.querySelector('style').sheet.cssRules;
+          // Fetch the background declaration...
+          var bgDecl = (function () {
+            // ...via a self-executing function, where a loop is run
+            var bgStyle, i, l = styles.length;
+            for (i=0; i<l; i++) {
+              // ...checking if the rule is the one targeting the
+              // enhanced display.
+              if (styles[i].selectorText &&
+                  styles[i].selectorText == '.'+enhancedClass+'::after') {
+                // If so, set bgDecl to the entire background
+                // value of that rule
+                bgStyle = styles[i].style.background;
+                // ...and break the loop.
+                break;
+              }
+            }
+            // ...and return that text.
+            return bgStyle;
+          }());
+          // Finally, return a match for the URL inside the background
+          // by using a fancy regex I Googled up, as long as the bgDecl
+          // variable is assigned at all.
+          return bgDecl && bgDecl.match(/(?:\(['|"]?)(.*?)(?:['|"]?\))/)[1];
+        }());
+
+        // Assign an onLoad handler to the dummy image *before* assigning the src
+        img.onload = function () {
+          container.className += ' ' +enhancedClass;
+        };
+        // Finally, trigger the whole preloading chain by giving the dummy
+        // image its source.
+        if (bigSrc) {
+          img.src = bigSrc;
+        }
+      };
     </script>
   </body>
 </html>
