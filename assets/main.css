@@ -67,9 +67,6 @@ a {
 }
 
 @supports (filter: blur(1px)) {
-  .display-container::after {
-    transform: translateZ(0);
-  }
   .display-container.enhanced::after {
     animation: sharpen 0.5s both;
   }
